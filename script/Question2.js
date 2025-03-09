@@ -1,14 +1,14 @@
 
-var chckClick= document.getElementById("chkBilling");
-chckClick.addEventListener("click", ToggleClick);
+var chckClick= document.getElementById("chkBilling"); //**cale if the same as billing checkbox is clicked */
+chckClick.addEventListener("click", ShowhideDiv);
 
  
 var submitbutton=document.getElementById("submit");
-submitbutton.addEventListener("click", Validateform);
+submitbutton.addEventListener("click", Validateform); //*Called when the user click the submit button
 
 
 var chkrdbutton= document.getElementById("paypal1");
-chkrdbutton.addEventListener("click", PaypalCardselected);
+chkrdbutton.addEventListener("click", PaypalCardselected); //**if the user select PayPal */
 
  var visacard= document.getElementById("Visa");
  visacard.addEventListener("click", CreditCardSelected);
@@ -16,12 +16,9 @@ chkrdbutton.addEventListener("click", PaypalCardselected);
  var crdMasterard= document.getElementById("mastercard");
  crdMasterard.addEventListener("click", CreditCardSelected);
 
-function ShowhideDiv()
+function ShowhideDiv() //** Purpose of this function is to hide or show the shipping information when the checkbox is selected */
 {
-
- //var x = document.getElementById("tblshipping");
-
-var x = document.getElementById("tblshipping");
+ var x = document.getElementById("tblshipping");
 var x2=document.getElementById("tblshippingwidth");
   if (x.style.display === "none")
   {
@@ -37,28 +34,17 @@ var x2=document.getElementById("tblshippingwidth");
 
 
 
-function ToggleClick()
-{
- 
-  if(chckClick.checked==true)
-   {
-    ShowhideDiv()
-   }
-    else
-   {
-      ShowhideDiv()
-    }
-}
 
 
-function PaypalCardselected(){
+
+function PaypalCardselected(){ //if the user select paypal then the credit card information is disabled
   document.getElementById("CardNumber").disabled = true;
   document.getElementById("ExpDate").disabled = true
   document.getElementById("CCV").disabled = true
 
 }
 
-function CreditCardSelected(){
+function CreditCardSelected(){//if the user select credit card then the credit card information is enabled
   document.getElementById("CardNumber").disabled = false
   document.getElementById("ExpDate").disabled = false
   document.getElementById("CCV").disabled = false
@@ -98,7 +84,7 @@ function validateCardDetail(){ //checking to ensure credit card detail is not em
         return returnvalue;
       }
   
-      var g=checkCardExpirationFormat();   //calling function to validate expiration date
+      var g=checkCardExpirationFormat();   //calling function to validate expiration date format
       if(!g)
       {
         returnvalue=false;
@@ -116,7 +102,7 @@ function validateCardDetail(){ //checking to ensure credit card detail is not em
     
 }
 
-function checkRadioButton()
+function checkRadioButton() //This function checks to ensure a button was selected
 {
 
   var radioButtons = document.getElementsByName("PaymentDetail");
@@ -138,23 +124,24 @@ function checkRadioButton()
   return formValid;
 }
 
-function Validateform()
+function Validateform() //Validating the form to ensure all the relevant fields are 
+// completed and displaying the appropriate messages
 {
  
-  //****Shipping Details****** */
+  //******************Shipping Details****** */
   if(document.getElementById('fname').value==="")//check if first name is empty
   {
     document.getElementById("firstname").innerHTML=" * First name is required";
     chkerrors=true;
     return ;
   }
-   document.getElementById("firstname").innerHTML="";
+   document.getElementById("firstname").innerHTML="";//resetting the error message
   if(document.getElementById('lname').value==="")//check if last name is empty
     {
       document.getElementById("lastname").innerHTML=" * Last name is required";
       return ;
     }
-    document.getElementById("lastname").innerHTML="";
+    document.getElementById("lastname").innerHTML="";//resetting the error message
     
 
     if(document.getElementById('email').value==="") //check if email is empty
@@ -162,7 +149,7 @@ function Validateform()
         document.getElementById("EmailMessage").innerHTML=" * Email is required";
         return ;
       }
-      document.getElementById("EmailMessage").innerHTML="";
+      document.getElementById("EmailMessage").innerHTML="";//resetting the error message
 
     if(validateEmail(document.getElementById('email')))//check if email is valid
      {
@@ -172,7 +159,7 @@ function Validateform()
       document.getElementById('EmailMessage').innerHTML=" * Email address entered is invalid ";
       return ;
      }    
-     document.getElementById("EmailMessage").innerHTML="";
+     document.getElementById("EmailMessage").innerHTML="";//resetting the error message
    
      var addressvalue=document.getElementById('address').value;
     if(addressvalue.trim()==="") //check if address is empty
@@ -180,7 +167,7 @@ function Validateform()
         document.getElementById("add1").innerHTML=" * Address is required";
         return ;
       }
-      document.getElementById("add1").innerHTML="";
+      document.getElementById("add1").innerHTML="";//resetting the error message
 
      var addresscountry=document.getElementById('country').value;
     if(addresscountry==="") //check if address is empty
@@ -188,20 +175,18 @@ function Validateform()
         document.getElementById("shipcountry").innerHTML=" * Country is required";
         return ;
       }
-      document.getElementById("shipcountry").innerHTML="";
+      document.getElementById("shipcountry").innerHTML="";//resetting the error message
 
-    //**************Payment Details****** */
-
+    //*********************Payment Details********************* */
       var pymtSelected=checkRadioButton(); //Checking if a payment method was selected
       if (!pymtSelected) {
         document.getElementById("paymenttype").innerHTML=" * Payment method is required";       
         return;
       }
-      document.getElementById("paymenttype").innerHTML="";
+      document.getElementById("paymenttype").innerHTML="";//resetting the error message
 
-
-       var valcreditInfo = document.getElementsByName("PaymentDetail");
-      if(valcreditInfo[1].checked  || valcreditInfo[2].checked)
+      var valcreditInfo = document.getElementsByName("PaymentDetail");
+      if(valcreditInfo[1].checked  || valcreditInfo[2].checked)//checking if credit card was selected before validating the card info
         {
             var creditcardDetails= validateCardDetail();
             if(!creditcardDetails){
@@ -209,15 +194,15 @@ function Validateform()
             }
         }
 
-      //**********Shipping details************ */
+      //*************************Shipping details************ */
      var details=checkShipping(); 
-      if(details)
+      if(details) //Checking to ensure all the shipping information is completed if the same as billing was not selected
       {
           return
       }
       else
       {
-        EmptyComponent();
+        EmptyComponent(); //Clearing all the components on the form
         alert("Form submitted successfully");
       }
 
@@ -243,7 +228,7 @@ function checkShipping()
           returnshipping=true;
           return returnshipping;
         }
-        document.getElementById("billaddress").innerHTML="";
+        document.getElementById("billaddress").innerHTML="";//resetting the error message
 
         var BilCity=document.getElementById('city1').value;
         if(BilCity.trim()==="") //check if city is empty
@@ -252,7 +237,7 @@ function checkShipping()
             returnshipping=true;
             return returnshipping;
           }
-          document.getElementById("billcity").innerHTML="";
+          document.getElementById("billcity").innerHTML=""; //resetting the error message
       
 
       var BillCountry=document.getElementById('country1').value;
@@ -262,7 +247,7 @@ function checkShipping()
           returnshipping=true;
           return returnshipping;
         }
-        document.getElementById("billcountry").innerHTML="";
+        document.getElementById("billcountry").innerHTML=""; //resetting the error message
        
  
         return returnshipping;
@@ -281,11 +266,11 @@ function LoadCountries(elementName) //loading countries by passing the component
 {
      const countries = ["Jamaica", "United States", "Canada", "United Kingdom", "Australia", "India", "Germany", "France", "Brazil", "South Africa"];
 
-        // Get the select element
-        const countrySelect = elementName
+          // Get the select element
+           const countrySelect = elementName
        
-        // Populate the select element with countries
-        countries.forEach(country => {
+          // Populate the select element with countries
+            countries.forEach(country => {
             const option = document.createElement('option');
             option.value = country;
             option.textContent = country;
@@ -329,7 +314,7 @@ function checkCardExpirationFormat(){ //check that the expiry date is in the cor
     returnvalue=false;
     return returnvalue;
   }
-  document.getElementById("expDate").innerHTML="";
+  document.getElementById("expDate").innerHTML=""; //resetting the error message
   return returnvalue;
 }
 
@@ -343,7 +328,7 @@ function ValidateCCV(){ //check that the CCV is in the correct format
     returnvalue=false;
     return returnvalue;
   }
-  document.getElementById("ccvinfo").innerHTML="";
+  document.getElementById("ccvinfo").innerHTML=""; //resetting the error message
   return returnvalue;
 }
 
@@ -357,6 +342,6 @@ function ValidateCardNumber(){ //check that the card number is in the correct fo
     returnvalue=false;
     return returnvalue;
   }
-  document.getElementById("cardnum").innerHTML="";
+  document.getElementById("cardnum").innerHTML="";  //resetting the error message
   return returnvalue;
 }

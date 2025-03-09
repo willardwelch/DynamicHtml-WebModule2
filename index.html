@@ -7,18 +7,18 @@
    
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     
-    <link rel='stylesheet' type='text/css'  href='css/styles.css'>  
-    <link rel="stylesheet" type="text/css" href='css/bootstrap.min.css'> 
-    <link rel='stylesheet' type='text/css' href='css/dataTable.dataTables.css'>  
-   <script type="text/javascript" src="script/jquery-3.7.1.js"></script>
-    <script type="text/javascript"  src="script/dataTables.js"> </script>  
-     <script type="text/javascript" src="script/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css'  href='./css/styles.css'>  
+    <link rel="stylesheet" type="text/css" href='./css/bootstrap.min.css'> 
+    <link rel='stylesheet' type='text/css' href='./css/dataTable.dataTables.css'>  
+   <script type="text/javascript" src="./script/jquery-3.7.1.js"></script>
+    <script type="text/javascript"  src="./script/dataTables.js"> </script>  
+     <script type="text/javascript" src="./script/bootstrap.min.js"></script>
     
 </head>
 
 <body id="loadforms" onload="dontDisplayforms();">
   
-    <img id="image1" src= "images/vtdi.png" width="150px" height="140px" alt="Vocational Training Development Institute" >
+    <img id="image1" src= "./images/vtdi.png" width="150px" height="140px" alt="Vocational Training Development Institute" >
 
     <div class="dropdown">
 
@@ -52,7 +52,7 @@
                     
                     <br>
                 </td>
-                <td>  <input class="ques1cButtons" type="button" id="Ques1A1"  value="Parse" >  </td>
+                <td align="center">  <input class="ques1cButtons" type="button" id="Ques1A1"  value="Parse" >  </td>
             </tr>
             <tr>
                 <td align="left"><br><p> Display the list of employees in<br>
@@ -60,13 +60,13 @@
                     </p>
                     <br>
                 </td>
-                <td>  <input class="ques1cButtons" type="button" id="Ques1A2"  value="Display" >  </td>
+                <td align="center">  <input class="ques1cButtons" type="button" id="Ques1A2"  value="Display" >  </td>
             </tr>
             <tr>
                 <td align="left"><br> 
                     <div id="demo"></div>
                 </td>
-                <td>
+                <td align="center">
                     <input class="ques1cButtons" type="button" id="ClrDemoDiv"  value="Clear" >
                     
                 </td>
@@ -83,7 +83,7 @@
             <thead>
                 <td align="left" colspan="2">
                     <b>(Question 1B)</b> Manipulating Data</i></b>
-                </td>
+                 </td>
             </thead>
             <tr>
                 <td align="left"><br><p> Use the map() method to generate an<br>
@@ -91,7 +91,7 @@
                     employees and log the result to the console.</p>
                   
                 </td>
-                <td>  <input class="ques1cButtons" type="button" id="Ques1B1"  value="Generate" >  </td>
+                <td align="center">  <input class="ques1cButtons" type="button" id="Ques1B1"  value="Generate" >  </td>
             </tr>  
             <tr>
                 <td align="left"><br><p> Use the reduce() method to calculate<br>
@@ -99,7 +99,7 @@
                     employees and log the result to the console.</p>
                   
                 </td>
-                <td>  <input class="ques1cButtons" type="button" id="Ques1B2"  value="Calculate" >  </td>
+                <td align="center">  <input class="ques1cButtons" type="button" id="Ques1B2"  value="Calculate" >  </td>
             </tr>  
 
             <tr>
@@ -107,7 +107,7 @@
                     than $55,000 and display their names in the console. <br>
                   </p>
                 </td>
-                <td>  <input class="ques1cButtons" type="button" id="Ques1B3"  value="Filter" >  </td>
+                <td align="center">  <input class="ques1cButtons" type="button" id="Ques1B3"  value="Filter" >  </td>
             </tr> 
             <tr>
                 <td align="left"><br> <p>Sort the employees by age in<br>
@@ -116,12 +116,16 @@
 
                   </p>
                 </td>
-                <td>  <input class="ques1cButtons" type="button" id="Ques1B4"  value="Filter/Display" >  </td>
+                <td align="center">  <input class="ques1cButtons" type="button" id="Ques1B4"  value="Filter/Display" >  </td>
             </tr>   
             <tr>
-                <td align="left" colspan="2"><br> 
+                <td align="left"><br> 
                     <div id="Demo"></div>
                   
+                </td>
+                <td align="center">
+                    <input class="ques1cButtons" type="button" id="ClrDemoDiv1"  value="Clear" >
+                    
                 </td>
             </tr> 
             
@@ -145,14 +149,14 @@
                     to JSON format using JSON.stringify</p>
                     <br>
                 </td>
-                <td> <br><input class="ques1cButtons" type="button" id="Ques1C1"  value="Convert" > </td>
+                <td align="center"> <br><input class="ques1cButtons" type="button" id="Ques1C1"  value="Convert" > </td>
             </tr>
             <tr>
                 <td align="left"><br>
                   <p>  Store the JSON data in localStorage <br>
                     using localStorage.setItem().</p>
                 </td>
-                <td><br>
+                <td align="center"><br>
                     <input type="text" id ="storeJson" title="Store data to local storage" ><br>                  
                     <input type="button" id="1C2" class="ques1cButtons" value=" Store JSON data" >
                 </td>
@@ -162,7 +166,7 @@
                     Retrieve and log the stored <br>
                     data using localStorage.getItem().</p>
                 </td>
-                <td><br>
+                <td align="center"><br>
                     <input type="text" id ="retrieveJson" title="retrieve and log data local storage" ><br>   
                     <input type="button" id="1C3" class="ques1cButtons" value=" Retrieve and Log" >
                 </td>
@@ -172,24 +176,18 @@
                   <p>  Remove a specific employee<br>
                     record from localStorage using localStorage.removeItem().</p>
                 </td>
-                <td><br>&nbsp;
+                <td align="center"><br>&nbsp;
                     <input type="text" id ="removeEmp" title="Employee to remove from storage" ><br>
                     &nbsp;<input type="button" id="1C4" class="ques1cButtons" value=" Remove Employee" ><br>
                 </td>
             </tr> 
-            <tr>
-                <td>
-                        <ul id="Store-Employee">
-                            <!--List items will go here dynamically-->
-                        </ul>
-                </td>
-            </tr>
+           
             <tr>
                 <td align="left"><br>
                   <p>  Clear all employee store data<br>
                     from localStorage using localStorage.clear().</p>
                 </td>
-                <td><br>
+                <td align="center"><br>
                     <input type="button" id="1C5" class="ques1cButtons" value=" Clear" >
                 </td>
             </tr> 
@@ -200,8 +198,8 @@
     
     
     <form id="Question2">
-
-        <table border="1" align=center width="50%">   
+    <center>
+        <table border="1" align="center" width="50%">   
                 <th colspan="2" align="center">Billing Information</th>
                   
               <tr>
@@ -212,7 +210,7 @@
                 <td><label for="email">Email</label></td> <td>&nbsp;
                     <input type="text" id="email" autocomplete="email"><br><span id="EmailMessage" class="errspan"></span></td></tr><tr>
                  <td><label for="address">Address</label></td><td>&nbsp;
-                       <input type="textarea" id="address" title="address" autocomplete="home"><br><span id="add1" class="errspan"></span></td></tr><tr>
+             <input type="textarea" id="address" title="address" autocomplete="street-address"><br><span id="add1" class="errspan"></span></td></tr><tr>
                 <td><label for="city">City</label></td><td>&nbsp;
                     <input type="text" id="city" title="city"></td></tr><tr>
                 <td><label for="state">State/Province</label></td><td>&nbsp;
@@ -231,7 +229,7 @@
             
             <tr>
                     <td colspan=2 align="left">
-                        <table border="1" id="expdate" width="50%">
+                        <table border="1" id="expdate" width="60%">
                             <th colspan="2" align="center">Payment Method</th>
                             <tr>
                                 <td colspan="2"> &nbsp; 
@@ -323,7 +321,7 @@
              </td>
             </tr>    
            <tr>
-                <td align="center" colspan=2><br>
+                <td align="center" colspan=2 ><br>
                   <input type="button" class="buttonData" id="submit" value="Submit"/>
                 </td>
             </tr> 
@@ -336,7 +334,8 @@
           </tfoot>
 
         </table>
-    </form>    
+        </center>
+    </form>    <!--End of form 2-->
     
     <form id="Question3">
 
@@ -364,10 +363,11 @@
          </table>
     </form>          
 
-    <script type="text/javascript" src='script/main.js'></script> 
-<script type="text/javascript" src="script/Question2.js"></script>
+    <script type="text/javascript" src="./script/main.js"></script> 
+    <script type="text/javascript" src="./script/Question1.js"></script>
+<script type="text/javascript" src="./script/Question2.js"></script>
     
-    <script type="text/javascript" src="script/Question3.js"></script>
+    <script type="text/javascript" src="./script/Question3.js"></script>
   
    
 </body>
