@@ -1,0 +1,27 @@
+
+
+{
+  
+"data" :[
+{ "id": 1, "first_name": "John", "last_name": "Doe", "email": "john.doe@example.com", "department": "HR", "salary": 50000 },
+{ "id": 2, "first_name": "Anna", "last_name": "Smith", "email": "anna.smith@example.com", "department": "Finance", "salary": 60000 },
+{ "id": 3, "first_name": "Peter", "last_name": "Jones", "email": "peter.jones@example.com", "department": "IT", "salary": 75000 },
+{ "id": 4, "first_name": "Mary", "last_name": "Johnson", "email": "mary.johnson@example.com", "department": "Marketing", "salary": 55000 },
+{ "id": 5, "first_name": "James", "last_name": "Brown", "email": "james.brown@example.com", "department": "HR", "salary": 52000 },
+{ "id": 6, "first_name": "Patricia", "last_name": "Williams", "email": "patricia.williams@example.com", "department": "Finance", "salary": 61000 },
+{ "id": 7, "first_name": "Robert", "last_name": "Taylor", "email": "robert.taylor@example.com", "department": "IT", "salary": 78000 },
+{ "id": 8, "first_name": "Jennifer", "last_name": "Martinez", "email": "jennifer.martinez@example.com", "department": "Marketing", "salary": 53000 },
+{ "id": 9, "first_name": "Michael", "last_name": "Garcia", "email": "michael.garcia@example.com", "department": "HR", "salary": 50500 },
+{ "id": 10, "first_name": "Linda", "last_name": "Rodriguez", "email": "linda.rodriguez@example.com", "department": "Finance", "salary": 62000 },
+{ "id": 11, "first_name": "William", "last_name": "Lopez", "email": "william.lopez@example.com", "department": "IT", "salary": 77000 },
+{ "id": 12, "first_name": "Elizabeth", "last_name": "Harris", "email": "elizabeth.harris@example.com", "department": "Marketing", "salary": 54000 },
+{ "id": 13, "first_name": "David", "last_name": "Clark", "email": "david.clark@example.com", "department": "HR", "salary": 51500 },
+{ "id": 14, "first_name": "Susan", "last_name": "Lewis", "email": "susan.lewis@example.com", "department": "Finance", "salary": 63000 },
+{ "id": 15, "first_name": "Richard", "last_name": "Young", "email": "richard.young@example.com", "department": "IT", "salary": 79000 },
+{ "id": 16, "first_name": "Jessica", "last_name": "Walker", "email": "jessica.walker@example.com", "department": "Marketing", "salary": 56000 },
+{ "id": 17, "first_name": "Charles", "last_name": "Allen", "email": "charles.allen@example.com", "department": "HR", "salary": 53000 },
+{ "id": 18, "first_name": "Karen", "last_name": "King", "email": "karen.king@example.com", "department": "Finance", "salary": 64000 },
+{ "id": 19, "first_name": "Joseph", "last_name": "Wright", "email": "joseph.wright@example.com", "department": "IT", "salary": 80000 },
+{ "id": 20, "first_name": "Nancy", "last_name": "Scott", "email": "nancy.scott@example.com", "department": "Marketing", "salary": 57000 }
+]
+}
