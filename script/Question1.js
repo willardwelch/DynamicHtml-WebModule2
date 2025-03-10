@@ -152,7 +152,7 @@ strJsonData.addEventListener("click", ()=>
     var getdata=document.getElementById("storeJson").value;
     if(getdata==="")
     {
-    alert("Please enter the name to save the data as");
+    alert("Please enter the data name to retreive and log");
     document.getElementById("storeJson").focus();
     }
     else
@@ -175,7 +175,7 @@ retrveLog.addEventListener("click", ()=>
     var getdata=document.getElementById("retrieveJson").value;
     if(getdata==="")
     {
-    alert("Please enter the data name to be written to the console");
+    alert("Please enter the data name to be retrieve and written to the console");
     document.getElementById("retrieveJson").focus();
     }
     else
@@ -198,7 +198,7 @@ RemoveEmployeeBtn.addEventListener("click", ()=>
        var getdata=document.getElementById("removeEmp").value;
         if(getdata==="")
         {
-        alert("Please enter the data name you wabt to remove");
+        alert("Please enter the data name you want to remove");
         document.getElementById("removeEmp").focus();
         }
         else
