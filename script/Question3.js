@@ -10,9 +10,9 @@ $( document ).ready(function() {
             { data: 'department' },
             { 
                 data: 'salary', render: function(data, type, row)
-                    {
+                {
                       return '$' + parseFloat(data).toLocaleString();
-                    } 
+                } 
             }
         ]
     });
