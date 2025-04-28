@@ -8,7 +8,12 @@ $( document ).ready(function() {
             { data: 'last_name' },
             { data: 'email' },
             { data: 'department' },
-            { data: 'salary' }
+            { 
+                data: 'salary', render: function(data, type, row)
+                    {
+                      return '$' + parseFloat(data).toLocaleString();
+                    } 
+            }
         ]
     });
 })
